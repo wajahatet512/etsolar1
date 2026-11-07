@@ -1,0 +1,17 @@
+{
+  "name": "et-group-google-admin-gate",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ET Group website with single-account Google sign-in protection for the demo Admin panel on Vercel.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "check": "node --check api/_lib/admin-session.js && node --check api/auth/config.js && node --check api/auth/login.js && node --check api/auth/session.js && node --check api/auth/logout.js && node --check api/admin/ping.js",
+    "test:session": "node tests/session.test.js",
+    "test:auth-handlers": "node tests/auth-handlers.test.js"
+  },
+  "dependencies": {
+    "google-auth-library": "^11.3.3"
+  }
+}
